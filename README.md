@@ -9,6 +9,14 @@ A crypto wallet is created using python in the file:
 and
 [Jupyter notebook version of wallet.py](Transactions/wallet/wallet.ipynb).
 
+Get BTC testcoins and transaction details on _**[Bitcoin Testnet](https://tbtc.bitaps.com/)**_
+
+_**Transaction Confirmation on BTC testcoin**_
+```
+"txid":"d742d8a9c7fe5b8afc5f2a1c862568bb511a61760eb03175f422c0b096722bf2"
+```
+![tx_btc](Transactions/images/txn_btc.png)
+
 To run wallet.py:
 * Open a terminal window on the wallet folder
 ```
@@ -18,9 +26,93 @@ code .
 ```
 from wallet import * 
 ```
+<details><summary>
+Three accounts each for BTCTEST and ETH
+</summary>
 
-However, it is in trouble-shooting stage. A bitcoin transaction is generated via this 
-["get_balance"](Transactions/wallet/get_balance.ipynb) notebook file.
+![keys](Transactions/images/keys_btc_eth.png)
+
+</details>
+
+* Run the `priv_key_to_account` function to connect to account information via _**Web3**_ on _localhost:8545_
+
+<details><summary>
+Information on Accounts and Keys in Python Notebook
+</summary>
+
+![priv_key_to_account](Transactions/images/priv_key_to_account.png)
+
+</details>
+
+* Create and send transactions via `create_tx` and `send_tx` functions
+
+_Transaction View on Python Notebook_
+![create_tx_send_tx_btc](Transactions/images/create_tx_send_tx_btc.png)
+
+
+* Outputs produced by [wallet.py](Transactions/wallet/wallet.py) in the terminal include:
+
+    * Private keys and addresses for BTCTEST and ETH coins
+    * transaction details on `create_tx(BTCTEST, btc_0, btc_1.address, 0.0001)` in a dictionary
+
+_Terminal View of details on Accounts and BTCTEST coin transactions_
+![create_tx_btc](Transactions/images/create_tx_btc.png)
+
+</details>
+
+<details><summary>
+Terminal view of signed transaction on BTCTEST coin
+</summary>
+
+![btc_eth_accounts_tx](Transactions/images/btc_eth_accounts_tx.png)
+
+</details>
+
+---
+## Trouble-shooting Stage on Ethereum Transactions
+### _Terminal Window:_
+
+**First Attempt:**
+
+_**Need to set up local testnet using `./puppeth` and `./geth`**_
+* Derived information on the first couple of ethereum accounts
+    * key for first ethereum account to send coins, `eth_0`
+    * address for the second ethereum account to receive coins, `eth_1.address`
+
+```shell
+>>> # Initiate a transaction of 0.01 ethereum on testnet
+>>> create_tx(ETH, eth_0, eth_1.address, 0.01)
+```
+**Second Attempt:**
+
+```shell
+>>> create_tx(ETH, '0xf0a03ce2448ac74a409a0d0f837fb993774e1aa700906d854cefd0e3150ff35e', '0xBf2CEa365Fa098bBABDd11b0ecbD9462595612e5', 0.01)
+```
+**Third Attempt:**
+```shell
+>>> create_tx(ETH, priv_key_to_account(ETH,'0xf0a03ce2448ac74a409a0d0f837fb993774e1aa700906d854cefd0e3150ff35e'), priv_key_to_account(ETH,'0x202bcf2d6ee314ca4593a0edc6f39d19a27c2d4b503c26c3d1637d2338de014c').address, 0.01)
+```
+_Note: Error messages on all three attempts._
+
+## Ethereum Testcoins
+
+_**[Kovan](https://faucet.kovan.network/)**_
+![kovan_eth_confirm](Transactions/images/kovan_eth_confirm.png)
+
+_**[Ropsten](https://faucet.ropsten.be/)**_
+![ropsten_eth](Transactions/images/ropsten_eth.png)
+
+<details><summary>
+1 ETH from Ropsten
+</summary>
+
+![ropsten_eth_confirm](Transactions/images/ropsten_eth_confirm.png)
+
+</details>
+
+---
+_Previously, it was in trouble-shooting stage. A bitcoin transaction is generated via this 
+["get_balance"](Transactions/wallet/get_balance.ipynb) notebook file._
 
 Screenshots of the transaction confirmation is provided here:
 
@@ -115,6 +207,8 @@ Nano environment
 
 ---
 ### _**Further exploration should there be more time**_
+
+- Trouble shooting on ethereum transactions 
 
 - Add support for `BTC`.
 
