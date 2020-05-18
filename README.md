@@ -12,10 +12,9 @@ and
 Get BTC testcoins and transaction details on _**[Bitcoin Testnet](https://tbtc.bitaps.com/)**_
 
 _**Transaction Confirmation on BTC testcoin**_
-```
-"txid":"d742d8a9c7fe5b8afc5f2a1c862568bb511a61760eb03175f422c0b096722bf2"
-```
-![tx_btc](Transactions/images/txn_btc.png)
+_**via Interactive Python on Terminal Window**_
+
+![tx_btc](Transactions/images/tx_btc.png)
 
 To run wallet.py:
 * Open a terminal window on the wallet folder
@@ -55,8 +54,14 @@ _Transaction View on Python Notebook_
     * Private keys and addresses for BTCTEST and ETH coins
     * transaction details on `create_tx(BTCTEST, btc_0, btc_1.address, 0.0001)` in a dictionary
 
-_Terminal View of details on Accounts and BTCTEST coin transactions_
+_**Terminal View of details on Accounts and BTCTEST coin transactions**_
+
+```shell
+"txid":"d742d8a9c7fe5b8afc5f2a1c862568bb511a61760eb03175f422c0b096722bf2"
+```
 ![create_tx_btc](Transactions/images/create_tx_btc.png)
+
+
 
 </details>
 
@@ -235,3 +240,6 @@ Nano environment
 * https://iancoleman.io/bip39/#english
 * https://tbtc.bitaps.com
 * https://faucet.ropsten.be/
+* https://tbtc.bitaps.com/
+* https://web3js.readthedocs.io/en/v1.2.0/web3-utils.html#sha3
+* https://ethereum.stackexchange.com/questions/23058/how-to-convert-string-to-bytes32-in-web3js
