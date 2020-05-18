@@ -223,9 +223,10 @@ Nano environment
 
 [Images](images)
 
-# References
 
+# References
 * CU Gitlab Repository
+* https://github.com/rhahn28/cryptowallet
 * https://web3py.readthedocs.io/en/latest/overview.html#Web3.toHex
 * https://web3py.readthedocs.io/en/latest/web3.eth.account.html#web3.account.Account.signTransaction
 * https://live.blockcypher.com/btc-testnet
@@ -233,3 +234,4 @@ Nano environment
 * https://coinfaucet.eu/en/btc-testnet/
 * https://iancoleman.io/bip39/#english
 * https://tbtc.bitaps.com
+* https://faucet.ropsten.be/
