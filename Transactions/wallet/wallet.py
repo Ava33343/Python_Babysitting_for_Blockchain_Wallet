@@ -62,10 +62,13 @@ from bit.network import NetworkAPI
 from pathlib import Path
 from getpass import getpass
 
+# set w3 connection
+w3 = Web3(Web3.HTTPProvider("http://127.0.0.1:8545"))
+
 # set gas price strategy to built-in "medium" algorithm (est ~5min per tx)
 # see https://web3py.readthedocs.io/en/stable/gas_price.html?highlight=gas
 # see https://ethgasstation.info/ API for a more accurate strategy
-# w3.eth.setGasPriceStrategy(medium_gas_price_strategy)
+w3.eth.setGasPriceStrategy(fast_gas_price_strategy)
 
 # Create a function to link private key of a child key to bit or web3 for transactions
 ## The two cryptos return different objects 
@@ -105,7 +108,6 @@ print(eth1)
 # *************************************
 
 # Connect localhost to web3
-w3 = Web3(Web3.HTTPProvider("http://127.0.0.1:8545"))
 w3.middleware_stack.inject(geth_poa_middleware, layer=0)
 
 def create_tx(coin, account, to, amount):

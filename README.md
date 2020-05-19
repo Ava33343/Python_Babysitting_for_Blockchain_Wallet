@@ -12,9 +12,14 @@ and
 Get BTC testcoins and transaction details on _**[Bitcoin Testnet](https://tbtc.bitaps.com/)**_
 
 _**Transaction Confirmation on BTC testcoin**_
-_**via Interactive Python on Terminal Window**_
 
 ![tx_btc](Transactions/images/tx_btc.png)
+
+
+_**Ethereum Transaction Confirmation on Running Python in a Terminal Window Interactively**_
+![eth_create_send_tx](Transactions/images/eth_create_send_tx.png)
+
+
 
 To run wallet.py:
 * Open a terminal window on the wallet folder
